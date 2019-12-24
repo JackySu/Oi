@@ -1,0 +1,57 @@
+a:link {
+    text-decoration: none;
+    color: crimson;
+}
+
+a:visited {
+    text-decoration: none;
+    color: crimson;
+}
+
+.text_header {
+    border: none;
+    margin: calc(2rem - 0.14285714em) 0em 1rem;
+    padding: 0em 0em;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    line-height: 1.3em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+::selection {
+    background: #FF7256;
+    /* 取色自 edwiv.com */
+    color: white;
+    /* Opera,Safari,Chrome */
+}
+
+.blank {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+#title {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 35px;
+    margin-top: 35px;
+    border: groove burlywood;
+    border-radius: 10px;
+    background-color: cadetblue;
+}
+
+#navigate {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    background-color: darkgray;
+    border-width: 1px;
+    border-radius: 5px;
+    border: groove slategray;
+}
