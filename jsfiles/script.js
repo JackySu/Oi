@@ -166,7 +166,7 @@ function setSize() {
 let mouse = new Vector(W / 2, H / 2);
 canvas.onmousemove = function (event) {
   mouse.x = event.clientX - canvas.offsetLeft;
-  mouse.y = event.clientY - canvas.offsetTop;
+  mouse.y = event.clientY - canvas.offsetTop + 120;
 };
 
 
