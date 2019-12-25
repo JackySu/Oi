@@ -26,6 +26,7 @@
             }
         }
     </script>
+
 </head>
 
 <body>
@@ -121,6 +122,68 @@
         </ul>
     </div>
 
+    <div class="bg">
+        <article class="blur_box">
+            <div class="rgba"></div>
+            <!--效果等同于blur_box-->
+
+            <div class="content_text">
+                <p>
+                    感谢以下博主以及网站的教程
+                    此处包含了本站点引用/学习所参考和借鉴的名单
+                    排名不分先后</p>
+
+                <p>https://aodabo.tech/blog/
+                    https://www.swiper.com.cn/
+                    https://www.npmjs.com/package/mditor</p>
+                <p>
+                    由于作业要求只有一小处邮件图标限于个人能力做不出，使用了Semantic UI，感谢
+                    https://1.semantic-ui.com/
+                    https://edwiv.com/
+                </p>
+                <p>
+                    网格
+                    https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/
+                </p>
+                <p>
+                    https://www.cnblogs.com/wind-lanyan/p/6978084.html
+                </p>
+                <p>
+                    导航栏
+                    https://blog.csdn.net/origin_edge/article/details/82974738
+                </p>
+                <p>
+                    position:absolute/relative
+                    https://www.cnblogs.com/fangsmile/p/7717273.html
+                </p>
+                <p>
+                    canvas
+                    https://blog.csdn.net/jbb0403/article/details/24002115
+                </p>
+                <p>
+                    加载动画/背景
+                    https://www.html5tricks.com/tag/loading动画
+                </p>
+                <p>
+                    Swiper插件
+                    https://www.swiper.com.cn/
+                </p>
+                <p>
+
+                    网页图标
+                    https://blog.csdn.net/qq_41748900/article/details/90079643
+                </p>
+                <p>
+                    性能监控
+                    https://www.cnblogs.com/tugenhua0707/p/10982332.html
+                </p>
+                <p>
+                    毛玻璃
+                    https://www.cnblogs.com/wwhhq/archive/2018/01/02/8179594.html
+                </p>
+            </div>
+        </article>
+    </div>
 
     <div class="blank"></div>
 
@@ -131,11 +194,41 @@
         </a>
     </div>
 
-    <script src="jsfiles/swiper.min.js"></script>
+    <script type="text/javascript">
+        // 计算加载时间
+        function getEntryTiming(entry) {
+            var obj = {};
+            // 获取重定向的时间
+            obj.redirectTime = entry.redirectEnd - entry.redirectStart;
+            // 获取DNS查询耗时
+            obj.lookupDomainTime = entry.domainLookupEnd - entry.domainLookupStart;
+            // 获取TCP链接耗时
+            obj.connectTime = entry.connectEnd - entry.connectStart;
+            // HTTP请求耗时
+            obj.requestTime = entry.responseEnd - entry.responseStart;
+
+            obj.name = entry.name;
+            obj.entryType = entry.entryType;
+            obj.initiatorType = entry.initiatorType;
+            obj.duration = entry.duration;
+            return obj;
+        }
+        window.onload = function () {
+            var entries = window.performance.getEntries();
+            console.log(entries);
+            entries.forEach(function (item) {
+                if (item.initiatorType) {
+                    var curItem = getEntryTiming(item);
+                    console.log(curItem);
+                }
+            });
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.js"></script>
+
 </body>
 
 </html>

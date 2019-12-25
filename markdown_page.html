@@ -28,6 +28,38 @@
             mditor.fullscreen = false;
         });
     </script>
+
+    <script type="text/javascript">
+        // 计算加载时间
+        function getEntryTiming(entry) {
+            var obj = {};
+            // 获取重定向的时间
+            obj.redirectTime = entry.redirectEnd - entry.redirectStart;
+            // 获取DNS查询耗时
+            obj.lookupDomainTime = entry.domainLookupEnd - entry.domainLookupStart;
+            // 获取TCP链接耗时
+            obj.connectTime = entry.connectEnd - entry.connectStart;
+            // HTTP请求耗时
+            obj.requestTime = entry.responseEnd - entry.responseStart;
+
+            obj.name = entry.name;
+            obj.entryType = entry.entryType;
+            obj.initiatorType = entry.initiatorType;
+            obj.duration = entry.duration;
+            return obj;
+        }
+        window.onload = function () {
+            var entries = window.performance.getEntries();
+            console.log(entries);
+            entries.forEach(function (item) {
+                if (item.initiatorType) {
+                    var curItem = getEntryTiming(item);
+                    console.log(curItem);
+                }
+            });
+        }
+    </script>
+    
 </body>
 
 </html>
