@@ -1,7 +1,7 @@
 .pic1 img {
-    opacity: 0.9;
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
+    opacity: 0.93;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
     transition: all 0.4s;
 }
 
@@ -15,12 +15,4 @@
 
 .rounded.image {
     border-radius: 5px;
-}
-
-.avatar {
-    margin-right: 0.25em;
-    display: inline-block;
-    width: 2em;
-    height: 2em;
-    border-radius: 500rem;
 }
